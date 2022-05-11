@@ -3,7 +3,6 @@ package com.example.moviecatalog
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -12,10 +11,12 @@ import com.example.moviecatalog.model.Movies
 
 class MovieItemAdapter:ListAdapter<Movies, MovieItemAdapter.MovieItemViewHolder>(DIFF_CALLBACK) {
 
+    var onClickListener: ((movieId: Int) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieItemViewHolder {
         val binding = MovieListItemBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
-        return MovieItemViewHolder(binding)
+        return MovieItemViewHolder(binding, onClickListener)
     }
 
     override fun onBindViewHolder(holder: MovieItemViewHolder, position: Int) {
@@ -23,7 +24,8 @@ class MovieItemAdapter:ListAdapter<Movies, MovieItemAdapter.MovieItemViewHolder>
     }
 
     class MovieItemViewHolder(
-        private val binding: MovieListItemBinding
+        private val binding: MovieListItemBinding,
+        private val onClickListener: ((movieId: Int) -> Unit)?
         ): RecyclerView.ViewHolder(binding.root) {
 
             fun bind(movie: Movies) {
@@ -31,8 +33,8 @@ class MovieItemAdapter:ListAdapter<Movies, MovieItemAdapter.MovieItemViewHolder>
                 binding.genre.text = movie.genre_ids.toString() // VERIFICAR CONVERSÃO PARA LISTA
                 binding.release.text = movie.release_date
 
-                binding.root.setOnClickListener {
-                    Log.i("CLICK", "CLICOU")
+                binding.root.setOnClickListener { // NAVIGATION from MovieList to MovieListDetails
+                    onClickListener?.invoke(movie.id)
                 }
             }
 
