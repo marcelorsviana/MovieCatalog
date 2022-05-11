@@ -46,6 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/title_details" />
 
     <TextView
+        android:id="@+id/plot_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -56,5 +57,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/genre_details" />
+
+    <TextView
+        android:id="@+id/rating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="5.0"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plot_details"
+
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
