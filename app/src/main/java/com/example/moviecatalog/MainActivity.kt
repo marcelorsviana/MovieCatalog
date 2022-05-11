@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
     // FUNCTION TO MAKE THE NAVIGATION TO MOVIE DETAILS SCREEN
     private fun goToMovieDetails(movieId: Int) {
         val intent = Intent(this, MovieDetailsActivity::class.java) // FROM MainActivity TO MovieDetailsActivity
+        intent.putExtra("movieId", movieId) // Here we send data to the MovieDetailsActivity
         startActivity(intent)
     }
 }

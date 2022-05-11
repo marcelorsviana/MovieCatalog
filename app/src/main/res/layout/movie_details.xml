@@ -26,11 +26,12 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:text="Avatar"
+        tools:text="Avatar"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_details" />
+        app:layout_constraintTop_toBottomOf="@+id/image_details"
+        />
 
     <TextView
         android:id="@+id/genre_details"
@@ -40,10 +41,11 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textAlignment="center"
-        android:text="Action | Fantasy"
+        tools:text="Action | Fantasy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_details" />
+        app:layout_constraintTop_toBottomOf="@+id/title_details"
+        />
 
     <TextView
         android:id="@+id/plot_details"
@@ -52,17 +54,18 @@
         android:layout_marginTop="16dp"
         android:textColor="@color/white"
         android:textSize="14sp"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Hac habitasse platea dictumst vestibulum rhoncus est. Ipsum consequat nisl vel pretium lectus quam."
+        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Hac habitasse platea dictumst vestibulum rhoncus est. Ipsum consequat nisl vel pretium lectus quam."
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/genre_details" />
+        app:layout_constraintTop_toBottomOf="@+id/genre_details"
+        />
 
     <TextView
         android:id="@+id/rating"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="5.0"
+        tools:text="5.0"
         android:layout_marginTop="16dp"
         android:textColor="@color/white"
         android:textSize="14sp"
@@ -70,7 +73,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/plot_details"
-
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

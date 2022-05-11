@@ -30,14 +30,12 @@ class MovieItemAdapter:ListAdapter<Movies, MovieItemAdapter.MovieItemViewHolder>
 
             fun bind(movie: Movies) {
                 binding.title.text = movie.title
-                binding.genre.text = movie.genre_ids.toString() // VERIFICAR CONVERSÃO PARA LISTA
+                binding.genre.text = movie.genre_ids.toString() // VERIFICAR CONVERSÃO PARA LISTA TODO
                 binding.release.text = movie.release_date
-
                 binding.root.setOnClickListener { // NAVIGATION from MovieList to MovieListDetails
                     onClickListener?.invoke(movie.id)
                 }
             }
-
         }
 
         companion object {
