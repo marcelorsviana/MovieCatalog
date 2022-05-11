@@ -1,7 +1,9 @@
 package com.example.moviecatalog
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -28,7 +30,12 @@ class MovieItemAdapter:ListAdapter<Movies, MovieItemAdapter.MovieItemViewHolder>
                 binding.title.text = movie.title
                 binding.genre.text = movie.genre_ids.toString() // VERIFICAR CONVERSÃO PARA LISTA
                 binding.release.text = movie.release_date
+
+                binding.root.setOnClickListener {
+                    Log.i("CLICK", "CLICOU")
+                }
             }
+
         }
 
         companion object {
